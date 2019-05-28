@@ -5,7 +5,6 @@ public class Test {
 
 	public static void main(String[] args) {
 
-			Direccion direccion=new Direccion("Montañeses",1234,4,"C");
 			Persona persona0=new Persona("Arturo","Roman",53);
 			Persona persona1=new Persona("Mónica","Gaztambide",35);
 			Mueble mueble0=new Mueble("Mesa","Madera","Marron");
@@ -20,7 +19,7 @@ public class Test {
 			ArrayList<Persona>personas=new ArrayList <Persona>();
 			personas.add(persona0);
 			personas.add(persona1);
-			Vivienda vivienda=new Vivienda(direccion, personas, muebles);
+			Vivienda vivienda=new Vivienda("Montañeses",1234,4,"C", personas, muebles);
 			System.out.println(vivienda.info(1));
 			
 			

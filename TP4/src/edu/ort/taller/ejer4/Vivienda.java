@@ -6,9 +6,9 @@ public class Vivienda {
 private Direccion direccion;
 private ArrayList<Persona> personas;
 private ArrayList<Mueble> muebles;
-public Vivienda(Direccion direccion, ArrayList<Persona> personas, ArrayList<Mueble> muebles) {
+public Vivienda(String calle, int direccion, int piso, String depto, ArrayList<Persona> personas, ArrayList<Mueble> muebles) {
 	super();
-	this.direccion = direccion;
+	this.direccion = new Direccion(calle, direccion, piso, depto);
 	this.personas = personas;
 	this.muebles = muebles;
 }

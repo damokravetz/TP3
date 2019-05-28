@@ -4,8 +4,35 @@ import java.util.ArrayList;
 
 public class Edificio {
 	private ArrayList<Vivienda>viviendas;
-	public Edificio(ArrayList<Vivienda> viviendas) {
-		this.viviendas=viviendas;
+	private String calle;
+	private int altura;
+	public Edificio(String calle, int direccion, int pisos, int deptos) {
+		this.calle=calle;
+		this.altura=direccion;
+		this.viviendas=new ArrayList<Vivienda>();
+		for(int i=0;i<(pisos);i++){
+			for(int o=0;o<deptos;o++){
+				this.viviendas.add(new Vivienda(calle, direccion,i,Deptos.values()[o].name()));
+			}
+		}
+	}
+	void agregarMueblesDepto(ArrayList<Mueble>muebles,int piso, String depto){
+		Vivienda v=buscarVivienda(piso, depto);
+		if(v!=null){
+			v.setMuebles(muebles);
+			System.out.println("Muebles establecidos");
+		}else{
+			System.out.println("Muebles no establecidos, no se encontro la vivienda");
+		}
+	}
+	void agregarPersonasDepto(ArrayList<Persona>personas,int piso, String depto){
+		Vivienda v=buscarVivienda(piso, depto);
+		if(v!=null){
+			v.setPersonas(personas);
+			System.out.println("Personas establecidas");
+		}else{
+			System.out.println("Personas no establecidas, no se encontro la vivienda");
+		}
 	}
 	public void realizarMudanza(int piso1, String depto1, int piso2, String depto2) {
 		Vivienda v1=buscarVivienda(piso1, depto1);
