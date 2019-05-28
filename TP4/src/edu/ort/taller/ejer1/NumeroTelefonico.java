@@ -1,7 +1,7 @@
 package edu.ort.taller.ejer1;
 
 public class NumeroTelefonico {
-	private int característica;
+	private int caracteristica;
 	private int numeroDeAbonado;
 	private int codigoDePais;
 	private TipoDeLinea tipoDeLinea;
@@ -10,18 +10,18 @@ public class NumeroTelefonico {
 		
 	}
 
-	public NumeroTelefonico(int característica, int numeroDeAbonado, int codigoDePais, TipoDeLinea tipoDeLinea) {
-		this.característica = característica;
+	public NumeroTelefonico(int caracteristica, int numeroDeAbonado, int codigoDePais, TipoDeLinea tipoDeLinea) {
+		this.caracteristica = caracteristica;
 		this.numeroDeAbonado = numeroDeAbonado;
 		this.codigoDePais = codigoDePais;
 		this.tipoDeLinea = tipoDeLinea;
 	}
 	
-	public int getCaracterística() {
-		return característica;
+	public int caracteristica() {
+		return caracteristica;
 	}
-	public void setCaracterística(int característica) {
-		this.característica = característica;
+	public void caracteristica(int caracteristica) {
+		this.caracteristica = caracteristica;
 	}
 	public int getNumeroDeAbonado() {
 		return numeroDeAbonado;
@@ -43,6 +43,6 @@ public class NumeroTelefonico {
 	}
 	
 	public String getValor() {
-		return "(+" + this.codigoDePais + ") " + this.característica;
+		return "(+" + this.codigoDePais + ") " + this.caracteristica;
 	}
 }
