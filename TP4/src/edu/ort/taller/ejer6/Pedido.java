@@ -2,10 +2,10 @@ package edu.ort.taller.ejer6;
 
 public class Pedido {
 	private int nro;
-	private int fechaCompra;
+	private String fechaCompra;
 	private Libro libro;
 	private Cliente cliente;
-	public Pedido(int nro, int fechaCompra, Libro libro, Cliente cliente) {
+	public Pedido(int nro, String fechaCompra, Libro libro, Cliente cliente) {
 		super();
 		this.nro = nro;
 		this.fechaCompra = fechaCompra;
@@ -18,10 +18,10 @@ public class Pedido {
 	public void setNro(int nro) {
 		this.nro = nro;
 	}
-	public int getFechaCompra() {
+	public String getFechaCompra() {
 		return fechaCompra;
 	}
-	public void setFechaCompra(int fechaCompra) {
+	public void setFechaCompra(String fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
 	public Libro getLibro() {
@@ -35,6 +35,11 @@ public class Pedido {
 	}
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	@Override
+	public String toString() {
+		return "Pedido [nro=" + nro + ", fechaCompra=" + fechaCompra + ", libro=" + libro.toString() + ", cliente=" + cliente.toString()
+				+ "]";
 	}
 	
 }
