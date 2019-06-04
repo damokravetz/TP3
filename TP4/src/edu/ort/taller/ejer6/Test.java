@@ -1,5 +1,7 @@
 package edu.ort.taller.ejer6;
 
+import java.util.Calendar;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class Test {
 		Libro l=new Libro("Gabriel Garcia Marquez", "100 años de soledad", "Planeta");
 		miTienda.agregarLibro(l);
 		miTienda.agregarPedido(29473648, "Gabriel Garcia Marquez", "100 años de soledad", "Planeta");
+		System.out.println((Calendar.DATE*100000)+(Calendar.MONTH*10000)+(Calendar.YEAR));
 		
 	}
 

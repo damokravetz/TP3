@@ -63,7 +63,7 @@ public class Tienda {
 	public void agregarPedido(int dni, String autor, String titulo, String editorial){
 		int nro=pendientes.size()+realizados.size()+1;
 		Calendar calendar;
-		int fecha=123;
+		int fecha=(Calendar.DATE*100000)+(Calendar.MONTH*10000)+(Calendar.YEAR);
 		pendientes.add(new Pedido(nro, fecha, buscarLibro( autor, titulo, editorial), buscarCliente(dni)));
 	}
 	private Cliente buscarCliente(int dni){
