@@ -5,5 +5,5 @@ import java.util.ArrayList;
 public class Hito {
 	private String fecha;
 	private String descripcion;
-	private ArrayList<Persona> personas;
+	private ArrayList<Persona> personasInvolucradas;
 }

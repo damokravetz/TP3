@@ -10,7 +10,7 @@ public class NumeroTelefonico {
 		
 	}
 
-	public NumeroTelefonico(int caracteristica, int numeroDeAbonado, int codigoDePais, TipoDeLinea tipoDeLinea) {
+	public NumeroTelefonico(int codigoDePais, int caracteristica, int numeroDeAbonado, TipoDeLinea tipoDeLinea) {
 		this.caracteristica = caracteristica;
 		this.numeroDeAbonado = numeroDeAbonado;
 		this.codigoDePais = codigoDePais;
@@ -45,6 +45,6 @@ public class NumeroTelefonico {
 	}
 	
 	public String getValor() {
-		return "(+" + this.codigoDePais + ") " + this.caracteristica;
+		return "(+" + this.codigoDePais + ") " + this.caracteristica + "-" + this.numeroDeAbonado;
 	}
 }

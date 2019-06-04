@@ -9,6 +9,7 @@ public class Persona {
 	private ArrayList<NumeroTelefonico> numerosTelefono;
 	private ArrayList<EMail> eMails;
 	private ArrayList<Mascota> mascotas;
+	private ArrayList<Hito> hitos;
 
 	public Persona(String apellido, String nombre) {
 		numerosTelefono = new ArrayList<NumeroTelefonico>();
