@@ -15,22 +15,77 @@ public class Persona {
 		numerosTelefono = new ArrayList<NumeroTelefonico>();
 		eMails = new ArrayList<EMail>();
 		mascotas = new ArrayList<Mascota>();
+		hitos = new ArrayList<Hito>();
 		this.apellido = apellido;
 		this.nombre = nombre;
 	}
 	
 	public void agregarMail(EMail eMail) {
-		eMails.add(eMail);
+		this.eMails.add(eMail);
 	}
 	
 	public void agregarTelefono(NumeroTelefonico numeroTelefonico){
-		numerosTelefono.add(numeroTelefonico);
+		this.numerosTelefono.add(numeroTelefonico);
 	}
 	
 	public void agregarMascota(Mascota mascota) {
-		mascotas.add(mascota);
+		this.mascotas.add(mascota);
 	}
 	
+	public void agregarhito(Hito hito) {
+		this.hitos.add(hito);
+	}
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public ArrayList<NumeroTelefonico> getNumerosTelefono() {
+		return numerosTelefono;
+	}
+
+	public void setNumerosTelefono(ArrayList<NumeroTelefonico> numerosTelefono) {
+		this.numerosTelefono = numerosTelefono;
+	}
+
+	public ArrayList<EMail> geteMails() {
+		return eMails;
+	}
+
+	public void seteMails(ArrayList<EMail> eMails) {
+		this.eMails = eMails;
+	}
+
+	public ArrayList<Mascota> getMascotas() {
+		return mascotas;
+	}
+
+	public void setMascotas(ArrayList<Mascota> mascotas) {
+		this.mascotas = mascotas;
+	}
+
+	public ArrayList<Hito> getHitos() {
+		return hitos;
+	}
+
+	public void setHitos(ArrayList<Hito> hitos) {
+		this.hitos = hitos;
+	}
+
 	public void mostrarTodo() {
 		System.out.println(apellido + ", " + nombre + "\n" +
 				"Telefonos:");
@@ -44,6 +99,18 @@ public class Persona {
 		System.out.println("Mascotas:");
 		for (Mascota mascota : mascotas) {
 			System.out.println(mascota.getTipoAnimal() + ", " + mascota.getNombre());
+		}
+		System.out.println("Hitos:");
+		for (Hito hito : hitos) {
+			System.out.println("---------------------------------");
+			System.out.println(hito.getDescripcion());
+			System.out.println("Fecha del hito: " + hito.getFecha());
+			if (!hito.getPersonasInvolucradas().isEmpty()) {
+				System.out.println("Personas Involucradas: ");
+				for (Persona persona : hito.getPersonasInvolucradas()) {
+					System.out.println(persona.getApellido() + ", " + persona.getNombre());
+				}
+			}
 		}
 	}
 }
