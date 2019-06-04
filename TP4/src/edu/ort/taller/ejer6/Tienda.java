@@ -1,5 +1,6 @@
 package edu.ort.taller.ejer6;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,14 +20,17 @@ public class Tienda {
 		clientes=new ArrayList<Cliente>();
 		libros=new ArrayList<Libro>();
 	}
-	public void addPedidoPendiente(Pedido p) {
-		pendientes.add(p);
-	}
-	public void addPedidoRealizado(Pedido p) {
-		realizados.add(p);
-	}
-	public void addStock(Stock s) {
-		stock.add(s);
+
+	public void agrgarStock(String autor, String titulo, String editorial, int cant) {
+		Libro l=buscarLibro(autor, titulo, editorial);
+		if(l!=null){
+			stock.add(new Stock(l,cant));
+		}else{
+			agregarLibro(new Libro(autor,titulo,editorial));
+			l=buscarLibro(autor, titulo, editorial);
+			stock.add(new Stock(l,cant));
+		}
+		
 	}
 	private Stock buscarStock(Libro l) {
 		int i=0;
@@ -63,7 +67,8 @@ public class Tienda {
 	public void agregarPedido(int dni, String autor, String titulo, String editorial){
 		int nro=pendientes.size()+realizados.size()+1;
 		Calendar calendar;
-		int fecha=(Calendar.DATE*100000)+(Calendar.MONTH*10000)+(Calendar.YEAR);
+		LocalDate ldt = LocalDate.now();
+		String fecha=""+ldt;
 		pendientes.add(new Pedido(nro, fecha, buscarLibro( autor, titulo, editorial), buscarCliente(dni)));
 	}
 	private Cliente buscarCliente(int dni){
@@ -89,6 +94,21 @@ public class Tienda {
 		}
 		return l;
 	}
-	
+	public void informarPedidos(){
+		System.out.println("Pendientes:");
+		for(Pedido p:pendientes){
+			System.out.println(p.toString());
+		}
+		System.out.println("Realizados:");
+		for(Pedido p:realizados){
+			System.out.println(p.toString());
+		}
+	}
+	public void informarStock(){
+		System.out.println("Stock:");
+		for(Stock s:stock){
+			System.out.println(s.toString());
+		}
+	}
 	
 }

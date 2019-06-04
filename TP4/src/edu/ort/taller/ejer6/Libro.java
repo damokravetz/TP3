@@ -28,5 +28,9 @@ public class Libro {
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
 	}
+	@Override
+	public String toString() {
+		return "Libro [autor=" + autor + ", titulo=" + titulo + ", editorial=" + editorial + "]";
+	}
 	
 }
